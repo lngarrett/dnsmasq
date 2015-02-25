@@ -1,6 +1,6 @@
 192.168.3.1 router.shortbus.lan
 
-192.168.3.11 nas.shortbus.lan praetorian.shortbus.lan
+192.168.3.11 praetorian.shortbus.lan
 
 192.168.3.23 readynas.shortbus.lan
 
