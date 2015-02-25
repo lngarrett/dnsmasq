@@ -4,7 +4,7 @@ RUN apt-get update -y
 RUN apt-get install -y dnsmasq
 
 COPY dnsmasq.conf /etc/dnsmasq.conf
-COPY hosts.conf /etc/dnsmasq.d/hosts.conf
+COPY hosts.dnsmasq /etc/hosts.dnsmasq
 
 EXPOSE 53
 EXPOSE 67
