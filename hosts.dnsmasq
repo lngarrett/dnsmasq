@@ -2,14 +2,17 @@
 
 192.168.3.11 praetorian.shortbus.lan
 
+192.168.3.21 esx1.shortbus.lan
+192.168.3.23 esx2.shortbus.lan
 192.168.3.23 readynas.shortbus.lan
+192.168.3.24 vcenter.shortbus.lan
 
 192.168.3.31 plex.shortbus.lan
 192.168.3.32 docker.shortbus.lan
-192.168.3.33 centurion.shortbus.lan
 192.168.3.37 ipcam.shortbus.lan
 192.168.3.38 neptune.shortbus.lan
 
 192.168.3.51 frontcam.shortbus.lan
 192.168.3.52 backcam.shortbus.lan
 192.168.3.53 wirelesscam.shortbus.lan
+192.168.3.54 drivewaycam.shortbus.lan
