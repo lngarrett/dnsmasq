@@ -1,6 +1,10 @@
-#/bin/bash
-
-docker kill dnsmasq
-docker rm dnsmasq
-docker build -t lngarrett/dnsmasq .
-docker run -d --restart="always" --name="dnsmasq" --net=host -p 53:53 lngarrett/dnsmasq
+#!/bin/bash
+docker rm -f dnsmasq
+docker pull lngarrett/docker-dnsmasq:latest
+docker run \
+  --name="dnsmasq" \
+  --publish=53:53 \
+  --net=host
+  --restart="always" \
+  --detach=true \
+  lngarrett/docker-dnsmasq
