@@ -8,7 +8,7 @@ dependencies:
   override:
     - docker info
     - if [[ -e ~/docker/image.tar ]]; then docker load --input ~/docker/image.tar; fi
-    - docker build -t lngarrett/docker-sonarr .
+    - docker build -t lngarrett/docker-dnsmasq .
     - mkdir -p ~/docker; docker save lngarrett/docker-dnsmasq > ~/docker/image.tar
 
 test:
