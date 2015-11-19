@@ -14,9 +14,7 @@ dependencies:
 test:
   override:
     - docker run -d --name="dnsmasq" lngarrett/docker-dnsmasq
-    - sleep 10
-    - docker exec -it dnsmasq ps -ef | grep dnsmasq
-    
+
 deployment:
   hub: 
     branch: master
