@@ -1,0 +1,25 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  cache_directories:
+    - "~/docker"
+  override:
+    - docker info
+    - if [[ -e ~/docker/image.tar ]]; then docker load --input ~/docker/image.tar; fi
+    - docker build -t lngarrett/docker-sonarr .
+    - mkdir -p ~/docker; docker save lngarrett/docker-dnsmasq > ~/docker/image.tar
+
+test:
+  override:
+    - docker run -d --name="dnsmasq" lngarrett/docker-dnsmasq
+    - sleep 10
+    - docker exec -it dnsmasq ps -ef | grep dnsmasq
+    
+deployment:
+  hub: 
+    branch: master
+    commands:
+      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+      - docker push lngarrett/docker-dnsmasq
