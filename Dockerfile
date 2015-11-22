@@ -8,4 +8,4 @@ COPY hosts.dnsmasq /etc/hosts.dnsmasq
 
 EXPOSE 53
 
-CMD ["dnsmasq","-d -q"]
+CMD ["dnsmasq","-dq"]
